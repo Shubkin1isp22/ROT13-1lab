@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ROT13 Расшифровка</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     
 </head>
 <body>
     <div class="container">
         <div class="half">
             <div class="label">Введите зашифрованный текст:</div>
-            <textarea id="text"></textarea>
+            <textarea id="text"></textarea>                             <!--поле многостраничного ввода текста-->
             <br>
             <button onclick="decodeText()">Расшифровать</button>
         </div>
 
         <div class="half">
             <div class="label">Результат расшифровки:</div>
-            <textarea id="result" readonly></textarea> <!--поле многостраничного ввода текста-->
+            <textarea id="result" readonly></textarea> 
         </div>
     </div>
 
