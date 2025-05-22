@@ -1,27 +1,25 @@
-<!DOCTYPE html5>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROT13 Расшифровка</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="half">
-            <div class="label">Введите зашифрованный текст:</div>
-            <textarea id="text"></textarea>                             <!--поле многостраничного ввода текста-->
-            <br>
+    <div class="wrapper">
+        <div class="editor">
+            <h2 class="label">ROT13</h2>
+            <textarea id="text" placeholder="Введите зашифрованный текст..."></textarea>
             <button onclick="decodeText()">Расшифровать</button>
         </div>
-
-        <div class="half">
-            <div class="label">Результат расшифровки:</div>
-            <textarea id="result" readonly></textarea> 
+        <div class="copilot">
+            <h2 class="label">Расшифровка:</h2>
+            <textarea id="result" readonly placeholder="Результат расшифровки..."></textarea>
         </div>
     </div>
 
     <script src="js/script.js"></script>
-    <script src="index.js"></script>
 </body>
 </html>

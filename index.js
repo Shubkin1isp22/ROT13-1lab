@@ -8,7 +8,7 @@ function onrequest(request, response){
             response.write(data);
             response.end();
         });
-    }
+    } 
     else if (request.url === '/styles/styles.css') {
         fs.readFile('styles/styles.css', function(err, data){
             response.writeHead(200, {'Content-Type': 'text/css; charset=utf-8'});
