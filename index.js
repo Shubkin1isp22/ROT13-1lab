@@ -33,6 +33,6 @@ function onrequest(request, response){
 }
 
 var server = http.createServer(onrequest);
-server.listen(3000,"127.0.0.1",function(){
+server.listen(3000,'0.0.0.0',function(){
     console.log("Server html is working in port 3000!!");
 });
