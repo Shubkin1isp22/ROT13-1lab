@@ -45,3 +45,4 @@ function decodeText() {
     const decoded = rot13Decode(text);
     document.getElementById("result").value = decoded;
 }
+

@@ -36,3 +36,11 @@ var server = http.createServer(onrequest);
 server.listen(3000,'0.0.0.0',function(){
     console.log("Server html is working in port 3000!!");
 });
+
+
+// подключение модуля из файла /modules/shubkin.js 
+// защита 2 лабы практика
+const getSumDateAndAge = require('./modules/shubkin');
+const age = 18;
+const result = getSumDateAndAge(age);
+console.log(result);
