@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div id="product-details">
+    <h1>Загрузка товара...</h1>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (!id) {
+        document.getElementById('product-details').innerHTML = '<p>Товар не найден</p>';
+    } else {
+        fetch(`/products/${id}`)
+            .then(res => res.json())
+            .then(product => {
+                document.getElementById('product-details').innerHTML = `
+                    <div class="product-wrapper">
+                        <div class="product-image">
+                        <img src="${product.thumbnail}" alt="${product.title}" />
+                        </div>
+                        <div class="product-info">
+                        <div class="product-tags">
+                            <span class="tag tag-purple">${product.category}</span>
+                            <span class="tag">${product.brand}</span>
+                        </div>
+                        <div class="product-title">${product.title}</div>
+                        <div class="product-description">${product.description}</div>
+                        <div class="product-price">$${product.price}</div>
+                        <button class="back-button" onclick="window.history.back()">← Назад</button>
+                        </div>
+                    </div>
+                    `;
+            })
+            .catch(err => {
+                document.getElementById('product-details').innerHTML = '<p>Ошибка загрузки товара</p>';
+            });
+    }
+</script>
+</body>
+</html>
